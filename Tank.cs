@@ -58,7 +58,7 @@ namespace ConsoleApp4
                 else if (currentAmount > 0 && value != JuiceType.UNKNOWN)
                     juice = value;
                 else
-                    juice = JuiceType.UNKNOWN;
+                    throw new ArgumentException("Некоректний тип соку!");
             }
         }
 
