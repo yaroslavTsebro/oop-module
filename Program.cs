@@ -277,9 +277,32 @@ namespace ConsoleApp4
         }
 
 
+        public static bool AllowedPour(Tank t1, Tank t2)
+        {
+            if (t1.FreeAmount < t2.CurrentAmount)
+                return false;
+
+            if (t1.Juice != t2.Juice && t1.Juice != JuiceType.UNKNOWN)
+                return false;
+
+            return true;
+        }
+
+        public static void PourJuice(Tank t1, Tank t2)
+        {
+            if (AllowedPour(t1, t2))
+            {
+                t1.AddJuice(t2.CurrentAmount, t2.Juice);
+                t2.MakeFree();
+                Console.WriteLine("Process is OK!");
+            }
+            else
+            {
+                Console.WriteLine("Process isn't OK!");
+            }
+        }
 
 
-        
     }
 
 }
