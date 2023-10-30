@@ -289,10 +289,6 @@ namespace ConsoleApp4
         {
             if (AllowedPour(t1, t2))
             {
-                if (t1.Juice == JuiceType.UNKNOWN)
-                {
-                    t1.Juice = t2.Juice;
-                }
                 t1.AddJuice(t2.CurrentAmount, t2.Juice);
                 t2.MakeFree();
                 Console.WriteLine("Process is OK!");

@@ -90,11 +90,13 @@ namespace ConsoleApp4
 
         public bool AddJuice(int amount, JuiceType juiceType)
         {
-            if (juice != juiceType)
+            if (juice != juiceType && juice != JuiceType.UNKNOWN)
                 return false;
 
             if (currentAmount + amount > capacity * CriticalPercentage / 100)
                 return false;
+
+            //this.Juice = juiceType;
             this.CurrentAmount += amount;
             return true;
         }
