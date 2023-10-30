@@ -95,8 +95,6 @@ namespace ConsoleApp4
 
             if (currentAmount + amount > capacity * CriticalPercentage / 100)
                 return false;
-
-            this.Juice = juiceType;
             this.CurrentAmount += amount;
             return true;
         }

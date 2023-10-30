@@ -245,14 +245,11 @@ namespace ConsoleApp4
 
             // Використовуючи методи класу List<T> знайти резервуари, в яких зберігається томатних сік
 
-            // your code!
-
             List<Tank> tanksWithTomatoJuice = tanks.Where(t => t.Juice == JuiceType.TOMATO).ToList();
 
-            tanksWithTomatoJuice.ForEach((Tank value) => Console.WriteLine(value.GetInfo()));
             // Вивести іноформацію про всі знайдені резервуари з томатним соком
 
-            // your code!
+            tanksWithTomatoJuice.ForEach((Tank value) => Console.WriteLine(value.GetInfo()));
 
 
             //================ Test 19 =====================
