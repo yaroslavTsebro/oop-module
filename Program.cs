@@ -282,7 +282,7 @@ namespace ConsoleApp4
             if (t1.FreeAmount < t2.CurrentAmount)
                 return false;
 
-            if (t1.Juice != t2.Juice)
+            if (t1.Juice != t2.Juice && t1.Juice != JuiceType.UNKNOWN)
                 return false;
 
             return true;
