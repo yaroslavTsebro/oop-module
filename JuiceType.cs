@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp4
 {
-    enum JuiceType
+    public enum JuiceType
     {
         UNKNOWN,
         APPLE,
