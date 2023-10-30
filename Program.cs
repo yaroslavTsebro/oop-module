@@ -282,7 +282,7 @@ namespace ConsoleApp4
             if (t1.FreeAmount < t2.CurrentAmount)
                 return false;
 
-            if (t1.Juice != t2.Juice && t1.Juice != JuiceType.UNKNOWN)
+            if (t1.Juice != t2.Juice)
                 return false;
 
             return true;
@@ -293,6 +293,10 @@ namespace ConsoleApp4
             if (AllowedPour(t1, t2))
             {
                 t1.AddJuice(t2.CurrentAmount, t2.Juice);
+                if(t1.Juice == JuiceType.UNKNOWN)
+                {
+                    t1.Juice = t2.Juice;
+                }
                 t2.MakeFree();
                 Console.WriteLine("Process is OK!");
             }
@@ -301,8 +305,5 @@ namespace ConsoleApp4
                 Console.WriteLine("Process isn't OK!");
             }
         }
-
-
     }
-
 }
